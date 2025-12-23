@@ -1,11 +1,11 @@
-name: Generate index.html
+name: Build memo site (md -> html + index)
 
 on:
   push:
     branches: ["main"]
     paths:
       - "posts/**"
-      - "tools/gen_index.py"
+      - "tools/**"
       - ".github/workflows/gen-index.yml"
   workflow_dispatch:
 
@@ -15,7 +15,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,10 +24,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate index.html
-        run: python tools/gen_index.py
+      - name: Install deps
+        run: pip install markdown
 
-      - name: Commit generated file
+      - name: Build site
+        run: python tools/build_site.py
+
+      - name: Commit generated files
         run: |
           if git diff --quiet; then
             echo "No changes to commit"
@@ -36,6 +38,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git commit -m "Auto-generate index.html"
+          git add index.html posts/**/*.html
+          git commit -m "Auto-build site (md -> html + index)"
           git push
