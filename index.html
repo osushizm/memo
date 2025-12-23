@@ -1,4 +1,66 @@
-# memo
-公にしていいただのメモ、学習メモ
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>memo | tech notes</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 24px;
+      line-height: 1.6;
+    }
+    h1 { margin-bottom: 0.2em; }
+    .hint { color: #555; font-size: 0.9em; }
+    ul { list-style: none; padding-left: 1em; }
+    li { margin: 4px 0; }
+    details > summary { cursor: pointer; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>memo</h1>
+  <p class="hint">ディレクトリ構造から自動生成された技術メモ集</p>
 
-テスト
+  <div class="box">
+    <ul>
+  <li><details open>
+  <summary><b>network/</b></summary>
+  <ul>
+    <li><a href="posts/network/2025-12-23-vlan.md">2025-12-23-vlan.md</a></li>
+  </ul>
+  </details></li>
+  <li><details open>
+  <summary><b>kubernetes/</b></summary>
+  <ul>
+    <li><a href="posts/kubernetes/2025-12-23-minikube.md">2025-12-23-minikube.md</a></li>
+  </ul>
+  </details></li>
+  <li><details open>
+  <summary><b>linux/</b></summary>
+  <ul>
+    <li><a href="posts/linux/2025-12-23-systemd.md">2025-12-23-systemd.md</a></li>
+  </ul>
+  </details></li>
+  <li><details open>
+  <summary><b>proxmox/</b></summary>
+  <ul>
+    <li><a href="posts/proxmox/2025-12-23-terraform.md">2025-12-23-terraform.md</a></li>
+  </ul>
+  </details></li>
+</ul>
+  </div>
+
+  <hr>
+  <p class="hint">
+    このページは GitHub Actions により自動生成されています。
+  </p>
+</body>
+</html>
